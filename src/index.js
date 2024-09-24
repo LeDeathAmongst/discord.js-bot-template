@@ -35,6 +35,14 @@ const presenceActivityMap = config.presence.activities.map(
 
 // Building our discord.js client
 const client = new Client({
+    rest: {
+        api: "https://spacebar.prismbot.icu/api",
+        cdn: "https://spacebar.prismbot.icu",
+        version: "9"
+    },
+    ws: {
+        version: 9
+    },
   intents: intents,
   presence: {
     status: PresenceUpdateStatus[config.presence.status] || PresenceUpdateStatus['online'],
